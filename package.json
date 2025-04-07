@@ -1,41 +1,53 @@
 {
-  "name": "renui",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.3",
-    "@vitejs/plugin-react": "^4.3.4",
-    "class-variance-authority": "^0.7.1",
-    "motion": "^12.6.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "styled-components": "^6.1.17"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@types/node": "^22.14.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react-swc": "^3.8.0",
-    "clsx": "^2.1.1",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
-    "react-icons": "^5.5.0",
-    "tailwind-merge": "^3.1.0",
-    "tailwindcss": "^4.1.3",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "uuid": "^11.1.0",
-    "vite": "^6.2.0",
-    "vite-plugin-dts": "^4.5.3"
-  }
+	"name": "hccui",
+	"version": "1.0.0",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"main": "./dist/renui.umd.cjs",
+	"module": "./dist/renui.js",
+	"exports": {
+		".": {
+			"import": "./dist/renui.js",
+			"require": "./dist/renui.umd.cjs"
+		},
+		"./style.css": "./dist/renui.css"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "eslint .",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.3",
+		"@vitejs/plugin-react": "^4.3.4",
+		"class-variance-authority": "^0.7.1",
+		"motion": "^12.6.3",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"styled-components": "^6.1.17"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.21.0",
+		"@types/node": "^22.14.0",
+		"@types/react": "^19.0.10",
+		"@types/react-dom": "^19.0.4",
+		"@vitejs/plugin-react-swc": "^3.8.0",
+		"ajv": "^7.2.4",
+		"clsx": "^2.1.1",
+		"eslint": "^9.21.0",
+		"eslint-plugin-react-hooks": "^5.1.0",
+		"eslint-plugin-react-refresh": "^0.4.19",
+		"globals": "^15.15.0",
+		"react-icons": "^5.5.0",
+		"tailwind-merge": "^3.1.0",
+		"tailwindcss": "^4.1.3",
+		"typescript": "~5.7.2",
+		"typescript-eslint": "^8.24.1",
+		"uuid": "^11.1.0",
+		"vite": "^6.2.0",
+		"vite-plugin-dts": "^4.5.3"
+	}
 }
