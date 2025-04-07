@@ -1,18 +1,28 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --color-default: oklch(21% 0.034 264.665);
-    --color-primary: oklch(62.3% 0.214 259.815);
-    --color-secondary: oklch(58.5% 0.233 277.117);
-    --color-warn: oklch(70.5% 0.213 47.604);
-    --color-danger: oklch(64.5% 0.246 16.439);
-    --color-success: oklch(72.3% 0.219 149.579);
-    --color-default-flat: oklch(96.7% 0.003 264.542);
-    --color-primary-flat: oklch(93.2% 0.032 255.585);
-    --color-secondary-flat: oklch(93% 0.034 272.788);
-    --color-warn-flat: oklch(95.4% 0.038 75.164);
-    --color-danger-flat: oklch(94.1% 0.03 12.58);
-    --color-success-flat: oklch(96.2% 0.044 156.743);
+	--color-default: oklch(21% 0.034 264.665);
+	--color-primary: oklch(62.3% 0.214 259.815);
+	--color-secondary: oklch(58.5% 0.233 277.117);
+	--color-warn: oklch(70.5% 0.213 47.604);
+	--color-danger: oklch(64.5% 0.246 16.439);
+	--color-success: oklch(72.3% 0.219 149.579);
+	--color-default-flat: oklch(96.7% 0.003 264.542);
+	--color-primary-flat: oklch(93.2% 0.032 255.585);
+	--color-secondary-flat: oklch(93% 0.034 272.788);
+	--color-warn-flat: oklch(95.4% 0.038 75.164);
+	--color-danger-flat: oklch(94.1% 0.03 12.58);
+	--color-success-flat: oklch(96.2% 0.044 156.743);
+	--color-default-hover: oklch(54.6% 0.245 262.881);
+	--color-primary-hover: oklch(54.6% 0.245 262.881);
+	--color-secondary-hover: oklch(13% 0.028 261.692);
+	--color-warn-hover: oklch(64.6% 0.222 41.116);
+	--color-danger-hover: oklch(58.6% 0.253 17.585);
+	--color-success-hover: oklch(62.7% 0.194 149.214);
+}
+
+button {
+	cursor: pointer;
 }
