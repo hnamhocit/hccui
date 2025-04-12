@@ -6,15 +6,25 @@ import { cn } from "../../../utils/cn";
 interface ModalHeaderProps {
 	children: React.ReactNode;
 	className?: string;
+	onOpenChange?: () => void;
 }
 
-const ModalHeader: FC<ModalHeaderProps> = ({ children, className }) => {
+const ModalHeader: FC<ModalHeaderProps> = ({
+	children,
+	className,
+	onOpenChange,
+}) => {
 	return (
-		<div className={cn("flex p-4 items-center justify-between", className)}>
+		<div
+			className={cn(
+				"flex p-4 items-center text-2xl font-semibold justify-between",
+				className,
+			)}
+		>
 			{children}
 
-			<Button color="danger" variant="light">
-				<FaTimes />
+			<Button color="danger" variant="light" onClick={onOpenChange}>
+				<FaTimes size={20} />
 			</Button>
 		</div>
 	);
