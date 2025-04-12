@@ -7,7 +7,16 @@ interface ModalBodyProps {
 }
 
 const ModalBody: FC<ModalBodyProps> = ({ children, className }) => {
-	return <div className={cn("p-4 space-y-4", className)}>{children}</div>;
+	return (
+		<div
+			className={cn(
+				"p-4 space-y-4 max-h-80 min-h-40 overflow-y-hidden",
+				className,
+			)}
+		>
+			{children}
+		</div>
+	);
 };
 
 export default ModalBody;

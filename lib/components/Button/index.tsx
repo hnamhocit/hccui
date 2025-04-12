@@ -63,6 +63,7 @@ interface ButtonProps
 		VariantProps<typeof button> {
 	isIconOnly?: boolean;
 	isLoading?: boolean;
+	isFullwidth?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -75,6 +76,7 @@ const Button: FC<ButtonProps> = ({
 	isDisabled,
 	isLoading,
 	children,
+	isFullwidth,
 	...props
 }) => {
 	const buttonRef = useRef<HTMLButtonElement>(null);
@@ -124,6 +126,7 @@ const Button: FC<ButtonProps> = ({
 					isRounded: isIconOnly || isRounded,
 					className: `${className} ${isIconOnlyClassName}`,
 				}),
+				isFullwidth && "w-full flex-1",
 			)}
 			onMouseDown={handleMouseDown}
 			{...props}

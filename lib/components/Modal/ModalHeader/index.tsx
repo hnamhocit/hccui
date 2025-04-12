@@ -23,9 +23,11 @@ const ModalHeader: FC<ModalHeaderProps> = ({
 		>
 			{children}
 
-			<Button color="danger" variant="light" onClick={onOpenChange}>
-				<FaTimes size={20} />
-			</Button>
+			{onOpenChange && (
+				<Button color="danger" variant="light" onClick={onOpenChange}>
+					<FaTimes size={20} />
+				</Button>
+			)}
 		</div>
 	);
 };

@@ -4,7 +4,7 @@ import { FC, memo, ReactNode } from "react";
 
 import { cn } from "../../utils/cn";
 
-const modal = cva("rounded-2xl w-md min-h-40 max-h-80 shadow-md bg-white");
+const modal = cva("rounded-2xl w-md shadow-md bg-white");
 
 interface ModalProps extends VariantProps<typeof modal> {
 	children?: ReactNode;
