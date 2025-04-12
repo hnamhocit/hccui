@@ -1,5 +1,12 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { FC, InputHTMLAttributes, memo, useId, useState } from "react";
+import {
+	FC,
+	InputHTMLAttributes,
+	memo,
+	ReactNode,
+	useId,
+	useState,
+} from "react";
 
 import { cn } from "../../utils/cn";
 import {
@@ -14,7 +21,7 @@ const compoundVariants = [
 	...generateFlatVariants(),
 ];
 
-const input = cva("inline-block outline-none transition-all", {
+const input = cva("flex items-center gap-3 transition-all", {
 	variants: {
 		size: {
 			sm: "py-1 px-2",
@@ -57,7 +64,8 @@ interface InputProps
 		VariantProps<typeof input> {
 	label?: string;
 	errorMessage?: string;
-	placeholder?: string;
+	startIcon?: ReactNode;
+	endIcon?: ReactNode;
 }
 
 const Input: FC<InputProps> = ({
@@ -67,7 +75,8 @@ const Input: FC<InputProps> = ({
 	variant,
 	color,
 	isRounded,
-	placeholder,
+	startIcon,
+	endIcon,
 	...props
 }) => {
 	const id = useId();
@@ -81,18 +90,25 @@ const Input: FC<InputProps> = ({
 				</label>
 			)}
 
-			<input
-				{...props}
-				id={id}
-				placeholder={placeholder}
+			<div
 				className={cn(
-					props.className,
-					isFocus && "ring-4 scale-y-90 shadow-md",
 					input({ size, variant, color, isRounded }),
+					isFocus && "ring-4 scale-y-90 shadow-md",
+					props.className,
 				)}
-				onFocus={() => setIsFocus(true)}
-				onBlur={() => setIsFocus(false)}
-			/>
+			>
+				{startIcon}
+
+				<input
+					{...props}
+					id={id}
+					className="outline-none bg-transparent"
+					onFocus={() => setIsFocus(true)}
+					onBlur={() => setIsFocus(false)}
+				/>
+
+				{endIcon}
+			</div>
 
 			{errorMessage && (
 				<div className="text-red-500 text-xs font-semibold">
