@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
 	plugins: [
@@ -11,6 +12,7 @@ export default defineConfig({
 			rollupTypes: true,
 			entryRoot: "lib", // Specify the root directory for type generation
 		}),
+		tailwindcss(),
 	],
 	build: {
 		lib: {

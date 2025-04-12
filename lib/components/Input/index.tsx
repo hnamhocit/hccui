@@ -35,12 +35,12 @@ const input = cva("flex items-center gap-3 transition-all", {
 			flat: "",
 		},
 		color: {
-			default: "bg-default focus:ring-default-flat",
-			primary: "bg-primary focus:ring-primary-flat",
-			secondary: "bg-secondary focus:ring-secondary-flat",
-			warn: "bg-warn focus:ring-warn-flat",
-			danger: "bg-danger focus:ring-danger-flat",
-			success: "bg-success focus:ring-success-flat",
+			default: "bg-default border-default-flat",
+			primary: "bg-primary border-primary-flat",
+			secondary: "bg-secondary border-secondary-flat",
+			warn: "bg-warn border-warn-flat",
+			danger: "bg-danger border-danger-flat",
+			success: "bg-success border-success-flat",
 		},
 		isRounded: {
 			true: "rounded-full",
@@ -85,7 +85,7 @@ const Input: FC<InputProps> = ({
 	return (
 		<div className="flex flex-col gap-1">
 			{label && (
-				<label htmlFor={id} className="text-sm font-medium">
+				<label htmlFor={id} className="text-sm font-medium select-none">
 					{label}
 				</label>
 			)}
@@ -93,21 +93,21 @@ const Input: FC<InputProps> = ({
 			<div
 				className={cn(
 					input({ size, variant, color, isRounded }),
-					isFocus && "ring-4 scale-y-90 shadow-md",
+					isFocus && "border-2",
 					props.className,
 				)}
 			>
-				{startIcon}
+				{startIcon && <div className="shrink-0">{startIcon}</div>}
 
 				<input
 					{...props}
 					id={id}
-					className="outline-none bg-transparent"
+					className="block flex-1 outline-none bg-transparent"
 					onFocus={() => setIsFocus(true)}
 					onBlur={() => setIsFocus(false)}
 				/>
 
-				{endIcon}
+				{endIcon && <div className="shrink-0">{endIcon}</div>}
 			</div>
 
 			{errorMessage && (
