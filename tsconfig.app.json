@@ -22,5 +22,11 @@
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true
 	},
-	"include": ["lib"]
+	"include": ["lib/**/*.ts", "lib/**/*.tsx"], // Include only production TypeScript files
+	"exclude": [
+		"**/*.test.ts",
+		"**/*.test.tsx",
+		"**/*.spec.ts",
+		"**/*.spec.tsx"
+	] // Exclude test files
 }

@@ -1,24 +1,20 @@
-import { dirname, resolve } from "path";
-import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-
-import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
 	plugins: [
-		react(), // Added react plugin
+		react(),
 		dts({
+			tsconfigPath: "./tsconfig.app.json", // Use the refined tsconfig
 			insertTypesEntry: true,
+			rollupTypes: true,
+			entryRoot: "lib", // Specify the root directory for type generation
 		}),
-		tailwindcss(),
 	],
 	build: {
 		lib: {
-			entry: resolve(__dirname, "lib/main.ts"),
+			entry: "./lib/main.ts", // Entry point for the library
 			name: "hccui",
 			fileName: "hccui",
 		},
