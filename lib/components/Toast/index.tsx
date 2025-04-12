@@ -50,7 +50,9 @@ const toast = cva(
 	},
 );
 
-interface ToastProps extends Omit<IToast, "color">, VariantProps<typeof toast> {
+interface ToastProps
+	extends Omit<IToast, keyof VariantProps<typeof toast>>,
+		VariantProps<typeof toast> {
 	className?: string;
 	index: number;
 }
