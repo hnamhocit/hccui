@@ -1,6 +1,6 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { AnimatePresence, motion } from "motion/react";
-import { FC, memo, ReactNode, useRef, useState } from "react";
+import { FC, memo, ReactNode, useEffect, useRef, useState } from "react";
 
 import { cn } from "../../utils/cn";
 
@@ -42,6 +42,19 @@ const Dropdown: FC<DropdownProps> = ({
 
 	const toggleIsOpen = () => setIsOpen((prev) => !prev);
 
+	useEffect(() => {
+		function handleClickOutside(ev: MouseEvent) {
+			if (ref.current && !ref.current.contains(ev.target as Node)) {
+				toggleIsOpen();
+			}
+		}
+		document.addEventListener("mousedown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [ref]);
+
 	return (
 		<div className="relative w-fit" ref={ref}>
 			<div className="cursor-pointer" onClick={toggleIsOpen}>
@@ -54,7 +67,6 @@ const Dropdown: FC<DropdownProps> = ({
 						animate={{ opacity: 1, translateY: 8 }}
 						exit={{ opacity: 0, translateY: -8 }}
 						className={cn(content({ position }), className)}
-						onClick={toggleIsOpen}
 					>
 						{children}
 					</motion.div>
