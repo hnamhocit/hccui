@@ -1,12 +1,14 @@
 import { FC, memo } from "react";
 import Button from "../Button";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { Color } from "../../constants/colors";
 
 interface PaginationProps {
 	itemsPerPage: number;
 	totalItems: number;
 	currentPage: number;
 	onChangePage: (page: number) => void;
+	color?: Color;
 }
 
 const Pagination: FC<PaginationProps> = ({
@@ -14,6 +16,7 @@ const Pagination: FC<PaginationProps> = ({
 	totalItems,
 	currentPage,
 	onChangePage,
+	color = "default",
 }) => {
 	const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -22,23 +25,11 @@ const Pagination: FC<PaginationProps> = ({
 			<Button
 				disabled={currentPage === 1}
 				isIconOnly
-				color="default"
+				color={color}
 				onClick={() => onChangePage(currentPage - 1)}
 			>
 				<FaAngleLeft size={20} />
 			</Button>
-			{/*
-				1
-				2
-				3
-				4
-				5
-				6
-				7
-				8
-				9
-				10
-			 */}
 
 			{new Array(totalPages)
 				.fill(null)
@@ -51,7 +42,8 @@ const Pagination: FC<PaginationProps> = ({
 				})
 				.map((page) => (
 					<Button
-						color={page === currentPage ? "primary" : "default"}
+						variant={page === currentPage ? "default" : "flat"}
+						color={color}
 						key={page}
 						onClick={() => onChangePage(page)}
 						isRounded
@@ -63,7 +55,7 @@ const Pagination: FC<PaginationProps> = ({
 			<Button
 				disabled={currentPage === totalPages}
 				isIconOnly
-				color="default"
+				color={color}
 				onClick={() => onChangePage(currentPage + 1)}
 			>
 				<FaAngleRight size={20} />
