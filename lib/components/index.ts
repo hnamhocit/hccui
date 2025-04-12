@@ -28,3 +28,5 @@ export { default as User } from "./User";
 export { default as Accordion } from "./Accordion";
 export { default as Badge } from "./Badge";
 export { default as Pagination } from "./Pagination";
+export { default as ModalHeader } from "./Modal/ModalHeader";
+export { default as ModalBody } from "./Modal/ModalBody";

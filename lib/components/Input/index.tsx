@@ -1,5 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { FC, HTMLAttributes, memo, useId, useState } from "react";
+import { FC, InputHTMLAttributes, memo, useId, useState } from "react";
 
 import { cn } from "../../utils/cn";
 import {
@@ -50,7 +50,10 @@ const input = cva("inline-block outline-none transition-all", {
 });
 
 interface InputProps
-	extends Omit<HTMLAttributes<HTMLInputElement>, "color" | "size">,
+	extends Omit<
+			InputHTMLAttributes<HTMLInputElement>,
+			keyof VariantProps<typeof input>
+		>,
 		VariantProps<typeof input> {
 	label?: string;
 	errorMessage?: string;
