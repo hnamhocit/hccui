@@ -1,18 +1,18 @@
 {
 	"name": "hccui",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"files": [
 		"dist"
 	],
-	"main": "./dist/renui.umd.cjs",
-	"module": "./dist/renui.js",
+	"main": "./dist/hccui.umd.cjs",
+	"module": "./dist/hccui.js",
 	"exports": {
 		".": {
-			"import": "./dist/renui.js",
-			"require": "./dist/renui.umd.cjs"
+			"import": "./dist/hccui.js",
+			"require": "./dist/hccui.umd.cjs"
 		},
-		"./style.css": "./dist/renui.css"
+		"./style.css": "./dist/hccui.css"
 	},
 	"scripts": {
 		"dev": "vite",

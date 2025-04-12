@@ -1,27 +1,30 @@
-import '../tailwind.css'
+import "../tailwind.css";
 
-export { default as Avatar } from './Avatar'
-export { default as Button } from './Button'
-export { default as Card } from './Card'
-export { default as CardBody } from './Card/CardBody'
-export { default as CardFooter } from './Card/CardFooter'
-export { default as CardHeader } from './Card/CardHeader'
-export { default as Checkbox } from './Checkbox'
-export { default as Dropdown } from './Dropdown'
-export { default as DropdownItem } from './Dropdown/DropdownItem'
-export { default as Flex } from './Flex'
-export { default as Grid } from './Grid'
-export { default as Image } from './Image'
-export { default as Input } from './Input'
-export { default as Link } from './Link'
-export * from './Loading'
-export { default as Modal } from './Modal'
-export { default as Radio } from './Radio'
-export { default as Switch } from './Switch'
-export { default as Tabs } from './Tabs'
-export { default as Text } from './Text'
-export { default as TextArea } from './TextArea'
-export { default as Toast } from './Toast'
-export { default as ToastContainer } from './Toast/ToastContainer'
-export { default as Tooltip } from './Tooltip'
-export { default as User } from './User'
+export { default as Avatar } from "./Avatar";
+export { default as Button } from "./Button";
+export { default as Card } from "./Card";
+export { default as CardBody } from "./Card/CardBody";
+export { default as CardFooter } from "./Card/CardFooter";
+export { default as CardHeader } from "./Card/CardHeader";
+export { default as Checkbox } from "./Checkbox";
+export { default as Dropdown } from "./Dropdown";
+export { default as DropdownItem } from "./Dropdown/DropdownItem";
+export { default as Flex } from "./Flex";
+export { default as Grid } from "./Grid";
+export { default as Image } from "./Image";
+export { default as Input } from "./Input";
+export { default as Link } from "./Link";
+export * from "./Loading";
+export { default as Modal } from "./Modal";
+export { default as Radio } from "./Radio";
+export { default as Switch } from "./Switch";
+export { default as Tabs } from "./Tabs";
+export { default as Text } from "./Text";
+export { default as TextArea } from "./TextArea";
+export { default as Toast } from "./Toast";
+export { default as ToastContainer } from "./Toast/ToastContainer";
+export { default as Tooltip } from "./Tooltip";
+export { default as User } from "./User";
+export { default as Accordion } from "./Accordion";
+export { default as Badge } from "./Badge";
+export { default as Pagination } from "./Pagination";
