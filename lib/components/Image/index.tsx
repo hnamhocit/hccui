@@ -1,49 +1,37 @@
-import { FC, memo, useState } from "react";
+import { FC, ImgHTMLAttributes, memo, useState } from "react";
 import { cn } from "../../utils/cn";
 
-export interface _ImageProps {
+export interface _ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
 	src: string;
 	alt?: string;
 	className?: string;
 	isZoom?: boolean;
 }
 
-interface ImageProps extends _ImageProps {
-	classNames?: ImageClassNames;
-}
-
-interface ImageClassNames {
-	container?: string;
-}
-
-const Image: FC<ImageProps> = ({
+const Image: FC<_ImageProps> = ({
 	src,
 	alt = "",
 	className,
 	isZoom,
-	classNames,
+	...props
 }) => {
 	const [isError, setIsError] = useState(false);
 
 	return (
-		<div
-			className={cn(
-				"w-fit h-fit overflow-hidden rounded-md",
-				classNames?.container,
-			)}
-		>
+		<>
 			<img
 				src={src}
 				alt={alt}
 				loading="lazy"
 				className={cn(
-					"inline-block transition",
+					"inline-block w-full h-full rounded-md transition",
 					{
 						"hover:scale-120 cursor-pointer": isZoom,
 					},
 					className,
 				)}
 				onError={() => setIsError(true)}
+				{...props}
 			/>
 
 			{isError && (
@@ -51,7 +39,7 @@ const Image: FC<ImageProps> = ({
 					Failed to load image.
 				</div>
 			)}
-		</div>
+		</>
 	);
 };
 

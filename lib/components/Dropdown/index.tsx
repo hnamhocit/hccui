@@ -5,7 +5,7 @@ import { FC, memo, ReactNode, useEffect, useRef, useState } from "react";
 import { cn } from "../../utils/cn";
 
 const content = cva(
-	"absolute p-2 bg-white overflow-x-hidden border space-y-4 border-gray-200 z-10 rounded-2xl shadow max-w-80 min-w-40 min-h-40 max-h-80 overflow-y-scroll",
+	"absolute p-2 bg-white overflow-x-hidden border border-gray-200 z-10 rounded-2xl shadow max-w-80 min-w-40 min-h-40 max-h-80 overflow-y-scroll",
 	{
 		variants: {
 			position: {
@@ -13,8 +13,10 @@ const content = cva(
 				"top-right": "bottom-full right-0",
 				"bottom-left": "top-full left-0",
 				"bottom-right": "top-full right-0",
-				"top-center": "bottom-full left-1/2 -translate-x-1/2",
-				"right-center": "top-1/2 -translate-x-1/2 left-full",
+				"top-center":
+					"bottom-full left-1/2 -translate-y-2 -translate-x-1/2",
+				"right-center":
+					"top-1/2 -translate-y-1/2 translate-x-2 left-full",
 				"left-center": "top-1/2 -translate-y-1/2 right-full",
 				"bottom-center": "top-full -translate-x-1/2 left-1/2",
 			},

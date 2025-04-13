@@ -47,6 +47,14 @@ const button = cva(
 				true: "opacity-70 cursor-not-allowed",
 				false: "",
 			},
+			shadow: {
+				default: "shadow-default/50",
+				primary: "shadow-primary/50",
+				secondary: "shadow-secondary/50",
+				warn: "shadow-warn/50",
+				danger: "shadow-danger/50",
+				success: "shadow-success/50",
+			},
 		},
 		compoundVariants,
 		defaultVariants: {
@@ -63,7 +71,8 @@ interface ButtonProps
 		VariantProps<typeof button> {
 	isIconOnly?: boolean;
 	isLoading?: boolean;
-	isFullwidth?: boolean;
+	isFullWidth?: boolean;
+	withShadow?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -76,7 +85,9 @@ const Button: FC<ButtonProps> = ({
 	isDisabled,
 	isLoading,
 	children,
-	isFullwidth,
+	isFullWidth,
+	withShadow,
+	shadow,
 	...props
 }) => {
 	const buttonRef = useRef<HTMLButtonElement>(null);
@@ -118,15 +129,17 @@ const Button: FC<ButtonProps> = ({
 			whileHover={{ opacity: 0.7 }}
 			whileTap={{ scale: 0.9 }}
 			className={cn(
+				isFullWidth && "w-full flex-1",
+				withShadow && "shadow-md",
 				button({
 					color,
 					size,
 					variant,
 					isDisabled: isLoading || isDisabled,
 					isRounded: isIconOnly || isRounded,
+					shadow,
 					className: `${className} ${isIconOnlyClassName}`,
 				}),
-				isFullwidth && "w-full flex-1",
 			)}
 			onMouseDown={handleMouseDown}
 			{...props}

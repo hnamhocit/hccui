@@ -25,7 +25,9 @@ const avatar = cva("rounded-full object-cover", {
 	},
 });
 
-interface AvatarProps extends VariantProps<typeof avatar>, _ImageProps {
+interface AvatarProps
+	extends Omit<_ImageProps, keyof VariantProps<typeof avatar>>,
+		VariantProps<typeof avatar> {
 	isBordered?: boolean;
 }
 
@@ -45,9 +47,9 @@ const Avatar: FC<AvatarProps> = ({
 			className={cn(
 				avatar({ size, color }),
 				isBordered && "border-2",
+				"rounded-full",
 				className,
 			)}
-			classNames={{ container: "rounded-full" }}
 			isZoom={isZoom}
 		/>
 	);
