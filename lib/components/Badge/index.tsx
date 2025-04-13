@@ -24,9 +24,9 @@ const badge = cva(
 					"left-0 top-1/2 -translate-y-1/2 translate-x-1/2",
 			},
 			size: {
-				small: "text-xs w-4 h-4",
-				medium: "text-sm w-6 h-6",
-				large: "text-base w-8 h-8",
+				sm: "text-xs w-4 h-4",
+				md: "text-sm w-6 h-6",
+				lg: "text-base w-8 h-8",
 			},
 			color: {
 				default: colors.default.bg,
@@ -38,7 +38,7 @@ const badge = cva(
 			},
 		},
 		defaultVariants: {
-			size: "medium",
+			size: "md",
 			color: "default",
 			position: "top-right",
 		},
