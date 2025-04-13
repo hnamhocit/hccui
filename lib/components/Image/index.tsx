@@ -6,19 +6,30 @@ export interface _ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
 	alt?: string;
 	className?: string;
 	isZoom?: boolean;
+	classNames?: ImageClassNames;
+}
+
+interface ImageClassNames {
+	container?: string;
 }
 
 const Image: FC<_ImageProps> = ({
 	src,
 	alt = "",
 	className,
+	classNames,
 	isZoom,
 	...props
 }) => {
 	const [isError, setIsError] = useState(false);
 
 	return (
-		<>
+		<div
+			className={cn(
+				"w-full h-full overflow-hidden",
+				classNames?.container,
+			)}
+		>
 			<img
 				src={src}
 				alt={alt}
@@ -39,7 +50,7 @@ const Image: FC<_ImageProps> = ({
 					Failed to load image.
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

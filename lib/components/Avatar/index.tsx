@@ -44,12 +44,15 @@ const Avatar: FC<AvatarProps> = ({
 		<Image
 			src={src}
 			alt={alt}
-			className={cn(
-				avatar({ size, color }),
-				isBordered && "border-2",
-				"rounded-full",
-				className,
-			)}
+			className={cn("object-cover", className)}
+			classNames={{
+				container: cn(
+					avatar({ size, color }),
+					isBordered && "border-2",
+					"rounded-full",
+					className,
+				),
+			}}
 			isZoom={isZoom}
 		/>
 	);

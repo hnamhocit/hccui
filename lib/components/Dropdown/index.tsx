@@ -17,7 +17,8 @@ const content = cva(
 					"bottom-full left-1/2 -translate-y-2 -translate-x-1/2",
 				"right-center":
 					"top-1/2 -translate-y-1/2 translate-x-2 left-full",
-				"left-center": "top-1/2 -translate-y-1/2 right-full",
+				"left-center":
+					"top-1/2 -translate-y-1/2 right-full -translate-x-2",
 				"bottom-center": "top-full -translate-x-1/2 left-1/2",
 			},
 		},
