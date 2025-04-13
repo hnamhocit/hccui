@@ -5,7 +5,7 @@ import { FC, memo, ReactNode, useEffect, useRef, useState } from "react";
 import { cn } from "../../utils/cn";
 
 const content = cva(
-	"absolute p-2 bg-white border border-gray-200 z-10 rounded-2xl shadow max-w-80 min-w-40 min-h-40 max-h-80 overflow-y-scroll",
+	"absolute p-2 bg-white overflow-x-hidden border space-y-4 border-gray-200 z-10 rounded-2xl shadow max-w-80 min-w-40 min-h-40 max-h-80 overflow-y-scroll",
 	{
 		variants: {
 			position: {
@@ -45,7 +45,7 @@ const Dropdown: FC<DropdownProps> = ({
 	useEffect(() => {
 		function handleClickOutside(ev: MouseEvent) {
 			if (ref.current && !ref.current.contains(ev.target as Node)) {
-				toggleIsOpen();
+				setIsOpen(false);
 			}
 		}
 		document.addEventListener("mousedown", handleClickOutside);

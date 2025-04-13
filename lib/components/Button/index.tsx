@@ -69,7 +69,7 @@ interface ButtonProps
 const Button: FC<ButtonProps> = ({
 	variant,
 	color,
-	size,
+	size = "md",
 	isRounded = false,
 	isIconOnly = false,
 	className,
