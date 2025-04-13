@@ -4,7 +4,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { colors } from "../../constants/colors";
 
 interface ITab {
-	label: string;
+	label: ReactNode;
 	content: ReactNode;
 }
 
@@ -43,7 +43,7 @@ const Tabs: FC<TabsProps> = ({ data, color }) => {
 						index={index}
 						setActiveIndex={setActiveIndex}
 						activeIndex={activeIndex}
-						key={tab.label}
+						key={index}
 					>
 						{tab.label}
 					</Tab>

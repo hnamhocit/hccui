@@ -10,7 +10,7 @@ import {
 } from "react";
 import { cn } from "../../../utils/cn";
 
-const tab = cva("py-1 px-2 text-sm transition");
+const tab = cva("flex items-center gap-3 py-1 px-2 text-sm transition");
 
 interface TabProps
 	extends HTMLAttributes<HTMLButtonElement>,
